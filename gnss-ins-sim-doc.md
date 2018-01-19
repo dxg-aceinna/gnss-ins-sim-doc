@@ -27,10 +27,19 @@ Its origin is fixed at the device. Its x axis is in the local horizontal plane a
 <div align=center><img width="400"  src="https://github.com/dxg-aceinna/gnss-ins-sim-doc/blob/master/images/NED.png"/></div>
 
 #### 2.1.3 Virtual Inertial frame
+For local-area or short-time applications, it may be more convenient to choose a virtual inertial frame as the reference frame especially when the sensor is of low accuracy. In these cases, the shape and rotation of the Earth will be ignored.
+The virtual inertial frame can be considered as an NED frame fixed at a known point.
+
 #### 2.1.4 Body frame
+The body coordinate system is fixed at the device. Its origin is located at the center of device. Its x axis points forward, lying in the symmetric plane of the device. Its y axis points to the right side of the device. Its z axis points downward to complete the right-hand coordinate system.
+
 ## 3 Sensor model
 ### 3.1 Gyroscope
+<img src="https://latex.codecogs.com/gif.latex?\omega_m=\omega&plus;b_{\omega}&plus;n_{\omega}" title="\omega_m=\omega+b_{\omega}+n_{\omega}" />
+
 #### 3.1.1 Constant Bias
+For a rate gyro, its bias is the average output from the gyroscope when it is not undergoing any rotation. When the rate gyro output is integrated to get angles, the constant bias causes the angles to grow linearly with time.
+
 #### 3.1.2 White Noise / Angle Random Walk
 #### 3.1.3 Bias Stability
 #### 3.1.4 Calibration Errors
