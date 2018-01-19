@@ -17,7 +17,8 @@
 #### 2.1.1 ECEF frame
 The ECEF frame is an Earth-Centered, Earth-Fixed reference system. Its origin is the Earth’s CoM. Its z axis points to the true north. Its x axis points to the intersection of the Greenwich meridian and the equator, and its y axis complete the right-handed coordinate frame. We use the WGS-84 reference ellipsoid in the simulation since it is used in GPS.
 Obviously, the ECEF is not an inertial reference system.
-![](https://github.com/dxg-aceinna/gnss-ins-sim-doc/blob/master/images/ECEF.png)
+
+<div align=center><img width="150" height="150" src="https://github.com/dxg-aceinna/gnss-ins-sim-doc/blob/master/images/ECEF.png"/></div>
 
 #### 2.1.2 NED frame
 #### 2.1.3 Virtual Inertial frame
