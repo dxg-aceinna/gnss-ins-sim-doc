@@ -35,7 +35,9 @@ The body coordinate system is fixed at the device. Its origin is located at the 
 
 ## 3 Sensor model
 ### 3.1 Gyroscope
+<div align=center>
 <img src="https://latex.codecogs.com/gif.latex?\omega_m=\omega&plus;b_{\omega}&plus;n_{\omega}" title="\omega_m=\omega+b_{\omega}+n_{\omega}" />
+</div>
 
 #### 3.1.1 Constant Bias
 For a rate gyro, its bias is the average output from the gyroscope when it is not undergoing any rotation. When the rate gyro output is integrated to get angles, the constant bias causes the angles to grow linearly with time.
