@@ -51,6 +51,8 @@ The body coordinate system is fixed at the device. Its origin is located at the 
 <img src="https://latex.codecogs.com/gif.latex?\dot{b}_{\omega&space;v}=\frac{1}{\tau}b_{\omega&space;v}&plus;n_{\omega&space;v}" title="\dot{b}_{\omega v}=\frac{1}{\tau}b_{\omega v}+n_{\omega v}" />
 </div>
 
+wherein, <img src="https://latex.codecogs.com/gif.latex?\omega" title="\omega" /> is the true angular velocity, 
+
 #### 3.1.1 Constant Bias
 For a rate gyro, its bias is the average output from the gyroscope when it is not undergoing any rotation. When the rate gyro output is integrated to get angles, the constant bias causes the angles to grow linearly with time.
 
