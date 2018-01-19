@@ -43,6 +43,12 @@ The body coordinate system is fixed at the device. Its origin is located at the 
 <img src="https://latex.codecogs.com/gif.latex?b_{\omega}=b_{\omega&space;c}&plus;b_{\omega&space;v}" title="b_{\omega}=b_{\omega c}+b_{\omega v}" />
 </div>
 
+<img src="https://latex.codecogs.com/gif.latex?\omega" title="\omega" /> is the true angular velocity. 
+The subscript "m" means measurement. 
+<img src="https://latex.codecogs.com/gif.latex?n_\omega" title="n_\omega" /> is the white noise of the gyroscope output.
+<img src="https://latex.codecogs.com/gif.latex?b_\omega" title="b_\omega" /> is the gyro bias which include a constant bias <img src="https://latex.codecogs.com/gif.latex?b_{\omega&space;c}" title="b_{\omega c}" /> and a varying bias <img src="https://latex.codecogs.com/gif.latex?b_{\omega&space;v}" title="b_{\omega v}" />.
+There are two models for the varying bias:
+
 <div align=center>
 <img src="https://latex.codecogs.com/gif.latex?\dot{b}_{\omega&space;v}=n_{\omega&space;v}" title="\dot{b}_{\omega v}=n_{\omega v}" />
 </div>
@@ -50,8 +56,6 @@ The body coordinate system is fixed at the device. Its origin is located at the 
 <div align=center>
 <img src="https://latex.codecogs.com/gif.latex?\dot{b}_{\omega&space;v}=\frac{1}{\tau}b_{\omega&space;v}&plus;n_{\omega&space;v}" title="\dot{b}_{\omega v}=\frac{1}{\tau}b_{\omega v}+n_{\omega v}" />
 </div>
-
-<img src="https://latex.codecogs.com/gif.latex?\omega" title="\omega" /> is the true angular velocity. The subscript "m" means measurement. <img src="https://latex.codecogs.com/gif.latex?b_\omega" title="b_\omega" /> is the gyro bias which include a constant bias <img src="https://latex.codecogs.com/gif.latex?b_{\omega&space;c}" title="b_{\omega c}" /> and a varying bias <img src="https://latex.codecogs.com/gif.latex?b_{\omega&space;c}" title="b_{\omega c}" />.
 
 #### 3.1.1 Constant Bias
 For a rate gyro, its bias is the average output from the gyroscope when it is not undergoing any rotation. When the rate gyro output is integrated to get angles, the constant bias causes the angles to grow linearly with time.
