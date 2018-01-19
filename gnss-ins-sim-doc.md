@@ -40,11 +40,11 @@ The body coordinate system is fixed at the device. Its origin is located at the 
 </div>
 
 <div align=center>
-<img src="https://latex.codecogs.com/gif.latex?b_{\omega}=b_{\omega c}&plus;b_{\omega v}" title="b_{\omega}=b_{\omega c}+b_{\omega v}" />
+<img src="https://latex.codecogs.com/gif.latex?b_{\omega}=b_{\omega&space;c}&plus;b_{\omega&space;v}" title="b_{\omega}=b_{\omega c}+b_{\omega v}" />
 </div>
 
 <div align=center>
-<img src="https://latex.codecogs.com/gif.latex?b_{\omega}_v=n_{\omega v}" title="b_{\omega v}=n_{\omega v}" />
+<img src="https://latex.codecogs.com/gif.latex?\dot{b}_{\omega&space;v}=n_{\omega&space;v}" title="\dot{b}_{\omega v}=n_{\omega v}" />
 </div>
 
 <div align=center>
