@@ -14,13 +14,13 @@
 
 ## 1 Introduction
 ------
-This is doc is for better understanding and usage of **gnss-ins_sim**
+This doc is for better understanding and usage of **gnss-ins_sim**
 
 ## 2 Preliminary
 ------
-Coordinate system definitions.
 
 ### 2.1 Coordinate frames
+This section gives the definitions of the coordinate system used in **gnss-ins-sim**.
 
 #### 2.1.1 ECEF frame
 The ECEF frame is an Earth-Centered, Earth-Fixed reference system. Its origin is the Earth’s CoM. Its z axis points to the true north. Its x axis points to the intersection of the Greenwich meridian and the equator, and its y axis complete the right-handed coordinate frame. We use the WGS-84 reference ellipsoid in the simulation since it is used in GPS.
