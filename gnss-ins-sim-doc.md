@@ -10,6 +10,7 @@
 * [3 Sensor model](#3-sensor-model)
 * [4 Algorithm](#4-algorithm)
 * [5 Simulation design and implementation](#5-simulation-design-and-implementation)
+* [6 References](#6-references)
 
 ## 1 Introduction
 ------
@@ -119,17 +120,29 @@ Similar to a gyro, the bias stability of an accelerometer can also be modelled b
 Calibration errors (errors in the scale factors, alignments and linearities of the accelerometers) tend to produce bias errors that are only observed when the device is undergoing accelerations (including gravitational acceleration).
 
 ### 3.3 GPS
+to be added
 
 ### 3.4 Magnetometer
 Unlike IMU, when we talk about the errors of a magnetometer, we also include environmental inteferences around the sensor, besides inherent errors of the magnetometer.
+There are two kinds of interferences: hard iron error and soft iron error. The former introduces in the sensor output a constant offset from the true value, which has the same effect as the sensor bias. The latter is caused by soft iron materials around the sensor and distort the environmental magnetic field to be measured.
+The model of the magnetometer can be given by
+<div align=center>
+<img src="https://latex.codecogs.com/gif.latex?m_m=C_s_i\cdot&space;m&plus;b_m&plus;n_m">
+</div>
+where, <img src="https://latex.codecogs.com/gif.latex?m"> is the true magnetic field, <img src="https://latex.codecogs.com/gif.latex?m_m"> is the sensor output, <img src="https://latex.codecogs.com/gif.latex?C_s_i"> is the soft iron matrix, <img src="https://latex.codecogs.com/gif.latex?b_m"> is the hard iron, <img src="https://latex.codecogs.com/gif.latex?n_m"> is the white noise. Indeed, the hard iron is composed of "true" hard iron and sensor bias, and the soft iron represents the combined effects of "true" soft iron, misalignment, scale factor error and installation error.
+
 
 ## 4 Algorithm
 ------
 
 ## 4.1 Allan analysis
+In the previous sections we described a number of noise processes which arise in accelerometer and gyroscope signals. In this section we describe a technique known as Allan Variance, which can be used to detect and determine the properties of such processes.
+
+## 4.2 Strapdown inertial system
 
 ## 5 Simulation design and implementation
 ------
 
-
+## 6 References
+______
 
