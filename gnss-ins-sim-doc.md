@@ -147,3 +147,4 @@ In the previous sections we described a number of noise processes which arise in
 ## 6 References
 ______
 
+* [1] Woodman, Oliver J. An introduction to inertial navigation. No. UCAM-CL-TR-696. University of Cambridge, Computer Laboratory, 2007.
