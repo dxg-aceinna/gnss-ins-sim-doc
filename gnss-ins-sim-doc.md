@@ -129,6 +129,7 @@ The model of the magnetometer can be given by
 <div align=center>
 <img src="https://latex.codecogs.com/gif.latex?m_m=C_s_i\cdot&space;m&plus;b_m&plus;n_m">
 </div>
+
 where, <img src="https://latex.codecogs.com/gif.latex?m"> is the true magnetic field, <img src="https://latex.codecogs.com/gif.latex?m_m"> is the sensor output, <img src="https://latex.codecogs.com/gif.latex?C_s_i"> is the soft iron matrix, <img src="https://latex.codecogs.com/gif.latex?b_m"> is the hard iron, <img src="https://latex.codecogs.com/gif.latex?n_m"> is the white noise. Indeed, the hard iron is composed of "true" hard iron and sensor bias, and the soft iron represents the combined effects of "true" soft iron, misalignment, scale factor error and installation error.
 
 
