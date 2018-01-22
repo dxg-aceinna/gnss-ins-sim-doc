@@ -141,11 +141,11 @@ In the previous sections we described a number of noise processes which arise in
 The Allan Variance of a signal is a function of averaging time. For an averaging time t, the Allan Variance is computed as follows:
 
 * Take a long sequence of data and divide it into bins of length <img src="https://latex.codecogs.com/gif.latex?t">. There must be enough data for at least 9 bins (otherwise the results obtained begin to lose their significance).
-* Average the data in each bin to obtain a list of averages <img src="https://latex.codecogs.com/gif.latex?(a(t)_1, a(t)_2,...,at(t)_n)">, where <img src="https://latex.codecogs.com/gif.latex?n"> is the
+* Average the data in each bin to obtain a list of averages <img src="https://latex.codecogs.com/gif.latex?(a(t)_1,a(t)_2,...,at(t)_n)">, where <img src="https://latex.codecogs.com/gif.latex?n"> is the
 number of bins.
 * The Allan Variance is then given by
 <div align=center>
-<img src="https://latex.codecogs.com/gif.latex?\textup{AVAR}(t)=\frac{1}{2(n-1)}\cdot&space;\sum_{i}^{ }(a(t)_{i&plus;1}-a(t)_i)^2">
+<img src="https://latex.codecogs.com/gif.latex?\textup{AVAR}(t)=\frac{1}{2(n-1)}\cdot&space;\sum_{i}^{&space;}(a(t)_{i&plus;1}-a(t)_i)^2">
 </div>
 
 To determine the characteristics of the underlying noise processes, Allan Deviation
