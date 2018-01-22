@@ -155,7 +155,7 @@ To determine the characteristics of the underlying noise processes, Allan Deviat
 is plotted as a function of t on a log-log scale. Different types of random process cause slopes with
 different gradients to appear on the plot.
 <div align=center>
-<img width="400"  src="https://github.com/dxg-aceinna/gnss-ins-sim-doc/blob/master/images/allan_deviation.png"/>
+<img width="600"  src="https://github.com/dxg-aceinna/gnss-ins-sim-doc/blob/master/images/allan_deviation.png"/>
 </div>
 
 ## 4.2 Strapdown inertial system
