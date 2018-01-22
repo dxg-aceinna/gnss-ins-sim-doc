@@ -9,7 +9,7 @@
 * [2 Preliminary](#2-preliminary)
 * [3 Sensor model](#3-sensor-model)
 * [4 Algorithm](#4-algorithm)
-* [5 Sim](#5-sim)
+* [5 Simulation design and implementation](#5-simulation-design-and-implementation)
 
 ## 1 Introduction
 ------
@@ -104,14 +104,16 @@ Calibration errors refer to errors in the scale factors, alignments, and lineari
 
 where, <img src="https://latex.codecogs.com/gif.latex?a_m" title="a_m" /> is the accelerometer measurement, <img src="https://latex.codecogs.com/gif.latex?a" title="a" /> is the true  acceleration which inludes linear acceleration and gravitational acceleration, <img src="https://latex.codecogs.com/gif.latex?b_a" title="b_a" /> is the accelerometer bias which includes a constant bias and a varying bias, and <img src="https://latex.codecogs.com/gif.latex?n_a" title="n_a" /> is the accelerometer noise.
 #### 3.2.1 Constant Bias
-A constant bias error of ǫ, when double integrated, causes an error in position which grows quadratically with time. The accumulated error in position is
+If the accelerometer measurements are used to determine the tilt angle of the device w.r.t the local horizontal plane, a constant bias error of <img src="https://latex.codecogs.com/gif.latex?\epsilon" /> will cause errors in pitch and roll angles. When double integrated to get positions, a constant bias error causes an error in position which grows quadratically with time. The accumulated error in position is
 <div align=center>
-<img src="https://latex.codecogs.com/gif.latex?r(t)=\frac{t^2}{2} \cdot \epsilon" />
+<img src="https://latex.codecogs.com/gif.latex?r(t)=\frac{\epsilon}{2}&space;\cdot&space;t^2" />
 </div>
 
 #### 3.2.2 White Noise / Velocity Random Walk
+Similar to a gyro ARW, the white noise sequence in the accelerometer measurements introduce a velocity random walk (VRW) that is usually specified with units of <img src="https://latex.codecogs.com/gif.latex?m/s/\sqrt{h}" />.
 
 #### 3.2.3 Bias Stability
+Similar to a gyro, the bias stability of an accelerometer can also be modelled by a random walk model or a frist-order Gauss-Markov model.
 
 #### 3.2.4 Calibration Errors
 Calibration errors (errors in the scale factors, alignments and linearities of the accelerometers) tend to produce bias errors that are only observed when the device is undergoing accelerations (including gravitational acceleration).
@@ -119,11 +121,14 @@ Calibration errors (errors in the scale factors, alignments and linearities of t
 ### 3.3 GPS
 
 ### 3.4 Magnetometer
+Unlike IMU, when we talk about the errors of a magnetometer, we also include environmental inteferences around the sensor, besides inherent errors of the magnetometer.
 
 ## 4 Algorithm
 ------
 
-## 5 Sim
+## 4.1 Allan analysis
+
+## 5 Simulation design and implementation
 ------
 
 
