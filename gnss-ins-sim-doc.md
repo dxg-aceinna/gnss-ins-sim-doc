@@ -138,7 +138,7 @@ where, <img src="https://latex.codecogs.com/gif.latex?m"> is the true magnetic f
 
 ## 4.1 Allan analysis
 In the previous sections we described a number of noise processes which arise in accelerometer and gyroscope signals. In this section we describe a technique known as Allan Variance, which can be used to detect and determine the properties of such processes.
-The Allan Variance of a signal is a function of averaging time. For an averaging time t, the Allan Variance is computed as follows:
+The Allan Variance of a signal is a function of averaging time. For an averaging time t, the Allan Variance is computed as follows<sup>[1]</sup>:
 
 * 1\. Take a long sequence of data and divide it into bins of length <img src="https://latex.codecogs.com/gif.latex?t">. There must be enough data for at least 9 bins (otherwise the results obtained begin to lose their significance).
 * 2\. Average the data in each bin to obtain a list of averages <img src="https://latex.codecogs.com/gif.latex?(a(t)_1,a(t)_2,...,at(t)_n)">, where <img src="https://latex.codecogs.com/gif.latex?n"> is the
