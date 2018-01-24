@@ -142,9 +142,9 @@ There are various statistical methods of describing specifications for GPS recei
 ### 3.3.2 3D accuracy
 | Accuracy measures | Formula | Probability | Definition |
 |------------|--------|-----------|-----------|
-| <div align=center> SEP <br>(Spherical Error Probable) </div>| <img src="https://latex.codecogs.com/gif.latex?0.56\sigma_x&plus;0.62\sigma_y" /> | 65% | def |
-| <div align=center> DRMS </div> | <img src="https://latex.codecogs.com/gif.latex?\sqrt{\sigma_x^2&plus;\sigma_y^2}" /> | 95% | def |
-| <div align=center> 2DRMS </div>| <img src="https://latex.codecogs.com/gif.latex?2\sqrt{\sigma_x^2&plus;\sigma_y^2}" /> | 95% | def |
+| <div align=center> SEP <br>(Spherical Error Probable) </div>| <img src="https://latex.codecogs.com/gif.latex?0.51(\sigma_x&plus;\sigam_y&plus;\sigma_z)" /> | 50% | The radius of sphere centered at the true position, containing the position estimate in 3D with probability of 50%. |
+| <div align=center> DRMS </div> | <img src="https://latex.codecogs.com/gif.latex?\sqrt{\sigma_x^2&plus;\sigma_y^2&plus;\sigma_z^2}" /> | 95% | The radius of sphere centered at the true position, containing the position estimate in 3D with probability of 61%. |
+| <div align=center> 2DRMS </div>| <img src="https://latex.codecogs.com/gif.latex?0.833(\sigma_x&plus;\sigam_y&plus;\sigma_z)" /> | 90% | The radius of sphere centered at the true position, containing the position estimate in 3D with probability of 90%. |
 
 
 ### 3.4 Magnetometer
