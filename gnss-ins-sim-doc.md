@@ -143,9 +143,10 @@ There are various statistical methods of describing specifications for GPS recei
 | Accuracy measures | Formula | Probability | Definition |
 |------------|--------|-----------|-----------|
 | <div align=center> SEP <br>(Spherical Error Probable) </div>| <img src="https://latex.codecogs.com/gif.latex?0.51(\sigma_x&plus;\sigam_y&plus;\sigma_z)" /> | 50% | The radius of sphere centered at the true position, containing the position estimate in 3D with probability of 50%. |
-| <div align=center> DRMS </div> | <img src="https://latex.codecogs.com/gif.latex?\sqrt{\sigma_x^2&plus;\sigma_y^2&plus;\sigma_z^2}" /> | 95% | The radius of sphere centered at the true position, containing the position estimate in 3D with probability of 61%. |
+| <div align=center> DRMS </div> | <img src="https://latex.codecogs.com/gif.latex?\sqrt{\sigma_x^2&plus;\sigma_y^2&plus;\sigma_z^2}" /> | 61% | The radius of sphere centered at the true position, containing the position estimate in 3D with probability of 61%. |
 | <div align=center> 2DRMS </div>| <img src="https://latex.codecogs.com/gif.latex?0.833(\sigma_x&plus;\sigam_y&plus;\sigma_z)" /> | 90% | The radius of sphere centered at the true position, containing the position estimate in 3D with probability of 90%. |
 
+We can see that GPS error characteristis are complicaetd<sup>[1]</sup>. To simplify the simulation, we use <img src="https://latex.codecogs.com/gif.latex?[\sigma_{NorthPos},\sigma_{EastPos},\sigma_{DownPos},\sigma_{NorthVel},\sigma_{EastVel},\sigma_{DownVel}]"> to specify the position and velocity error statistics of a GPS receiver.
 
 ### 3.4 Magnetometer
 Unlike IMU, when we talk about the errors of a magnetometer, we also include environmental inteferences around the sensor, besides inherent errors of the magnetometer.
@@ -163,7 +164,7 @@ where, <img src="https://latex.codecogs.com/gif.latex?m"> is the true magnetic f
 
 ## 4.1 Allan analysis
 In the previous sections we described a number of noise processes which arise in accelerometer and gyroscope signals. In this section we describe a technique known as Allan Variance, which can be used to detect and determine the properties of such processes.
-The Allan Variance of a signal is a function of averaging time. For an averaging time t, the Allan Variance is computed as follows<sup>[1]</sup>:
+The Allan Variance of a signal is a function of averaging time. For an averaging time t, the Allan Variance is computed as follows<sup>[2]</sup>:
 
 * 1\. Take a long sequence of data and divide it into bins of length <img src="https://latex.codecogs.com/gif.latex?t">. There must be enough data for at least 9 bins (otherwise the results obtained begin to lose their significance).
 * 2\. Average the data in each bin to obtain a list of averages <img src="https://latex.codecogs.com/gif.latex?(a(t)_1,a(t)_2,...,at(t)_n)">, where <img src="https://latex.codecogs.com/gif.latex?n"> is the
@@ -191,4 +192,5 @@ different gradients to appear on the plot.
 ## 6 References
 ______
 
-* [1] Woodman, Oliver J. An introduction to inertial navigation. No. UCAM-CL-TR-696. University of Cambridge, Computer Laboratory, 2007.
+* [1] http://www.navipedia.net/index.php/Positioning_Error
+* [2] Woodman, Oliver J. An introduction to inertial navigation. No. UCAM-CL-TR-696. University of Cambridge, Computer Laboratory, 2007.
