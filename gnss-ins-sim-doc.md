@@ -66,7 +66,7 @@ The mathematical model of a gyro in **gnss-ins-sim** is
 where <img src="https://latex.codecogs.com/gif.latex?\omega" title="\omega" /> is the true angular velocity, 
 the subscript "m" means measurement, 
 <img src="https://latex.codecogs.com/gif.latex?n_\omega" title="n_\omega" /> is the white noise of the gyroscope output,
-and <img src="https://latex.codecogs.com/gif.latex?b_\omega" title="b_\omega" /> is the gyro bias which include a constant bias <img src="https://latex.codecogs.com/gif.latex?b_{\omega&space;c}" title="b_{\omega c}" /> and a varying bias <img src="https://latex.codecogs.com/gif.latex?b_{\omega&space;v}" title="b_{\omega v}" />.
+and <img src="https://latex.codecogs.com/gif.latex?b_\omega" title="b_\omega" /> is the gyro bias which includes a constant bias <img src="https://latex.codecogs.com/gif.latex?b_{\omega&space;c}" title="b_{\omega c}" /> and a varying bias <img src="https://latex.codecogs.com/gif.latex?b_{\omega&space;v}" title="b_{\omega v}" />.
 
 #### 3.1.1 Constant Bias
 For a rate gyro, its constant bias is the average output from the gyroscope when it is not undergoing any rotation. When the rate gyro output is integrated to get angles, the constant bias causes the angles to grow linearly with time.
@@ -96,7 +96,7 @@ There are two models for the varying bias:
 </div>
 
 <div align=center>
-<img src="https://latex.codecogs.com/gif.latex?\dot{b}_{\omega&space;v}=\frac{1}{\tau}b_{\omega&space;v}&plus;n_{\omega&space;v}" title="\dot{b}_{\omega v}=\frac{1}{\tau}b_{\omega v}+n_{\omega v}" />
+<img src="https://latex.codecogs.com/gif.latex?\dot{b}_{\omega&space;v}=-\frac{1}{\tau}b_{\omega&space;v}&plus;n_{\omega&space;v}" title="\dot{b}_{\omega v}=\frac{1}{\tau}b_{\omega v}+n_{\omega v}" />
 </div>
 The first is a random walk model, and the second is a first-order Gauss-Markov model.
 In reality, bias fluctuations do not really behave as a random walk or a first-order Gauss-Markov model, and therefore the random walk model and the Gauss-Markov model are only good approximations to the true process of bias fluctuations.
@@ -189,7 +189,7 @@ different gradients to appear on the plot.
 ### 4.2.1 Rotation
 We adotp two attitude representations in **gnss-ins-sim**: Euler angles and quaternions. Since Euler angles are more straightforward, they are more suitable for input and output. In motion definitions files, Euler angles are used to specify device attitude.
 
-In **gnss-ins-sim**, Euler angles correspon to ZYX rotation sequence (yaw, pitch and roll), denoted by <img src="https://latex.codecogs.com/gif.latex?\psi,\theta,&space;&space;\phi"> respectively. 
+In **gnss-ins-sim**, Euler angles correspon to the ZYX rotation sequence (yaw, pitch and roll), denoted by <img src="https://latex.codecogs.com/gif.latex?\psi,\theta,&space;&space;\phi"> respectively. 
 
 The transformation matrix from the navigation frame to the body frame is
 <div align=center>
@@ -221,6 +221,7 @@ where, <img src="https://latex.codecogs.com/gif.latex?C_b^n" /> is the coordinat
 
 ## 5 Simulation design and implementation
 ------
+Please refer to doc strings of the functions in each module.
 
 ## 6 References
 ______
