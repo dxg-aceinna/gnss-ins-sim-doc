@@ -135,7 +135,7 @@ There are various statistical methods of describing specifications for GPS recei
 
 | Accuracy measures | Formula | Probability | Definition |
 |------------|--------|-----------|-----------|
-| CEP | <img src="https://latex.codecogs.com/gif.latex?0.56\sigma_x&plus;0.62\sigma_y" /> <img src="https://latex.codecogs.com/gif.latex?\textup{Accurate&space;when&space;}&space;\sigma_y/\sigma_x>0.3" /> | 50% | The radius of circle centered at the true position, containing the position estimate with probability of 50%. |
+| CEP | <img src="https://latex.codecogs.com/gif.latex?0.56\sigma_x&plus;0.62\sigma_y" /> <img src="https://latex.codecogs.com/gif.latex?\textup{(Accurate&space;when&space;}&space;\sigma_y/\sigma_x>0.3)" /> | 50% | The radius of circle centered at the true position, containing the position estimate with probability of 50%. |
 | DRMS | <img src="https://latex.codecogs.com/gif.latex?\sqrt{\sigma_x^2&plus;\sigma_y^2}" /> | 65% | The square root of the average of the squared horizontal position errors. |
 | 2DRMS | <img src="https://latex.codecogs.com/gif.latex?2\sqrt{\sigma_x^2&plus;\sigma_y^2}" /> | 95% | Twice the DRMS of the horizontal position errors. |
 
