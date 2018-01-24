@@ -189,15 +189,35 @@ different gradients to appear on the plot.
 ### 4.2.1 Rotation
 We adotp two attitude representations in **gnss-ins-sim**: Euler angles and quaternions. Since Euler angles are more straightforward, they are more suitable for input and output. In motion definitions files, Euler angles are used to specify device attitude.
 
-In **gnss-ins-sim**, Euler angles correspon to ZYX rotation sequence (yaw, pitch and roll), denoted by <img src="https://latex.codecogs.com/gif.latex?\psi,\theta,&space;&space;\phi"> respectively.
+In **gnss-ins-sim**, Euler angles correspon to ZYX rotation sequence (yaw, pitch and roll), denoted by <img src="https://latex.codecogs.com/gif.latex?\psi,\theta,&space;&space;\phi"> respectively. 
+
+The transformation matrix from the navigation frame to the body frame is
 <div align=center>
 <img src="https://latex.codecogs.com/gif.latex?C_n^b=\begin{bmatrix}cos(\theta)cos(\psi)&space;&cos(\theta)sin(\psi)&space;&-sin(\theta)&space;\\cos(\psi)sin(\phi)sin(\theta)-cos(\phi)sin(\psi)&space;&cos(\phi)cos(\psi)&plus;sin(\phi)sin(\theta)sin(\psi)&space;&cos(\theta)sin(\phi)&space;\\sin(\phi)sin(\psi)&plus;cos(\phi)cos(\psi)sin(\theta)&space;&cos(\phi)sin(\theta)sin(\psi)-cos(\psi)sin(\phi)&space;&cos(\phi)cos(\theta)&space;\end{bmatrix}" />
-<div>
+</div>
 
+We can calculate the angular rate from the Euler angles derivatives:
 
+<div align=center>
+<img src="https://latex.codecogs.com/gif.latex?\begin{align*}&&space;\omega_x=\dot{\phi}-\dot{\psi}sin(\theta)&space;\\&space;&&space;\omega_y=\dot{\theta}cos(\phi)+\dot{\psi}cos(\theta)sin(\phi)\\&space;&&space;\omega_z=\dot{\psi}cos(\phi)cos(\theta)-\dot{\theta}sin(\phi)&space;\end{align*}" />
+</div>
+
+or calculate Euler angles derivatives from the angular rate:
+<div align=center>
+<img src="https://latex.codecogs.com/gif.latex?\begin{align*}&&space;\dot{\psi}=(\omega_zcos(\phi)+\omega_ysin(\phi))\cdot&space;sec(\theta)&space;\\&space;&&space;\dot{\theta}=\omega_ycos(\phi)-\omega_zsin(\phi)\\&space;&&space;\dot{\phi}=\omega_x+(\omega_zcos(phi)+\omega_ysin(phi))\cdot&space;tan(\theta)&space;\end{align*}" />
+</div>
+
+The Euler angles derivatives are used to propagate attitude in the path generation module in **gnss-ins-sim**.
+
+Besides the coordinate transfromation matrix (the Direction Cosine Matrix, DCM) and the Euler angles, quaternions can also be used to represent attitude.
 
 ### 4.2.2 Translation
+According to Newton's second law of motion, positions and velocities can be calculated by integrating acceleration with known initial states:
+<div align=center>
+<img src="https://latex.codecogs.com/gif.latex?\begin{align*}&&space;a^n(t)=C_b^na^b(t)&space;\\&space;&&space;\dot{v}^n(t)=a^n(t)\\&space;&&space;\dot{r}^n(t)=v^n(t)&space;\end{align*}" />
+</div>
 
+where, <img src="https://latex.codecogs.com/gif.latex?C_b^n" /> is the coordinate transformation matrix from the body frame to the navigation frame, which can be calculated according to formula in [4.2.1 Rotation](#4-2-1-rotation)
 
 ## 5 Simulation design and implementation
 ------
