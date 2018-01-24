@@ -217,7 +217,7 @@ According to Newton's second law of motion, positions and velocities can be calc
 <img src="https://latex.codecogs.com/gif.latex?\begin{align*}&&space;a^n(t)=C_b^na^b(t)&space;\\&space;&&space;\dot{v}^n(t)=a^n(t)\\&space;&&space;\dot{r}^n(t)=v^n(t)&space;\end{align*}" />
 </div>
 
-where, <img src="https://latex.codecogs.com/gif.latex?C_b^n" /> is the coordinate transformation matrix from the body frame to the navigation frame, which can be calculated according to formula in [4.2.1 Rotation](#4-2-1-rotation)
+where, <img src="https://latex.codecogs.com/gif.latex?C_b^n" /> is the coordinate transformation matrix from the body frame to the navigation frame, which can be calculated according to formula in [4.2.1 Rotation](#421-rotation)
 
 ## 5 Simulation design and implementation
 ------
