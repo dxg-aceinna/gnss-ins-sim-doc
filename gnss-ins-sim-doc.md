@@ -19,7 +19,7 @@ This doc is for better understanding and usage of **gnss-ins_sim**
 ## 2 Preliminary
 ------
 
-### 2.1 Coordinate frames
+### 2.1 Coordinate systems
 This section gives the definitions of the coordinate system used in **gnss-ins-sim**.
 
 #### 2.1.1 ECEF frame
@@ -31,7 +31,7 @@ Obviously, the ECEF is not an inertial reference system.
 </div>
 
 #### 2.1.2 NED frame
-For a device near or on the surface of the Earth, it is more convenient to describe its motion (especially rotations) relative the NED (North-East-Downward) or ENU (East-North-Upward) frame. We choose the NED frame in gnss-ins-imu.
+For a device near or on the surface of the Earth, it is more convenient to describe its motion (especially rotations) in the NED (North-East-Downward) or ENU (East-North-Upward) frame. We choose the NED frame in gnss-ins-imu.
 Its origin is fixed at the device. Its x axis is in the local horizontal plane and point to the true north. Its z axis is perpendicular to the local horizontal plane and point downwards, and its y axis completes the right-handed coordinate frame.
 
 <div align=center>
@@ -45,10 +45,16 @@ The virtual inertial frame can be considered as an NED frame fixed at a known po
 #### 2.1.4 Body frame
 The body coordinate system is fixed at the device. Its origin is located at the center of device. Its x axis points forward, lying in the symmetric plane of the device. Its y axis points to the right side of the device. Its z axis points downward to complete the right-hand coordinate system.
 
+## 2.2 Attitude representation
+Two representations of the device attitude are adopted in **gnss-ins-sim**:
+* quaternions (scalar first);
+* Euler angles corresponding to the ZYX rotation sequence.
+
 ## 3 Sensor model
 ------
 
 ### 3.1 Gyroscope
+The mathematical model of a gyro in **gnss-ins-sim** is
 <div align=center>
 <img src="https://latex.codecogs.com/gif.latex?\omega_m=\omega&plus;b_{\omega}&plus;n_{\omega}" title="\omega_m=\omega+b_{\omega}+n_{\omega}" />
 </div>
@@ -99,6 +105,7 @@ In reality, bias fluctuations do not really behave as a random walk or a first-o
 Calibration errors refer to errors in the scale factors, alignments, and linearities of the gyros. Such errors tend to produce bias errors that are only observed when the device is undergoing rotations. Since theses errors can be accurately calibrated during factory calibration, we ignore such erros in **gnss-ins-sim**.
 
 ### 3.2 Accelerometer
+The mathematical model of an accelerometer in **gnss-ins-sim** is
 <div align=center>
 <img src="https://latex.codecogs.com/gif.latex?a_m=a&plus;b_a&plus;n_a" title="a_m=a+b_a+n_a" />
 </div>
@@ -120,7 +127,25 @@ Similar to a gyro, the bias stability of an accelerometer can also be modelled b
 Calibration errors (errors in the scale factors, alignments and linearities of the accelerometers) tend to produce bias errors that are only observed when the device is undergoing accelerations (including gravitational acceleration).
 
 ### 3.3 GPS
-to be added
+A GPS receiver can provide device position and velocity in the ECEF frame (WGS-84). It accuracy is usually specified as horizontal accuracy and vertical accuracy.
+
+There are various statistical methods of describing specifications for GPS receiver.
+
+### 3.3.1 2D accuracy
+
+| Accuracy measures | Formula | Probability | Definition |
+|------------|--------|-----------|-----------|
+| CEP | <img src="https://latex.codecogs.com/gif.latex?0.56\sigma_x&plus;0.62\sigma_y" /> <img src="https://latex.codecogs.com/gif.latex?\textup{Accurate when } \sigma_y/\sigma_x>0.3" /> | 50% | The radius of circle centered at the true position, containing the position estimate with probability of 50%. |
+| DRMS | <img src="https://latex.codecogs.com/gif.latex?\sqrt{\sigma_x^2&plus;\sigma_y^2}" /> | 65% | The square root of the average of the squared horizontal position errors. |
+| 2DRMS | <img src="https://latex.codecogs.com/gif.latex?2\sqrt{\sigma_x^2&plus;\sigma_y^2}" /> | 95% | Twice the DRMS of the horizontal position errors. |
+
+### 3.3.2 3D accuracy
+| Accuracy measures | Formula | Probability | Definition |
+|------------|--------|-----------|-----------|
+| <div align=center> SEP <br>(Spherical Error Probable) </div>| <img src="https://latex.codecogs.com/gif.latex?0.56\sigma_x&plus;0.62\sigma_y" /> | 65% | def |
+| <div align=center> DRMS </div> | <img src="https://latex.codecogs.com/gif.latex?\sqrt{\sigma_x^2&plus;\sigma_y^2}" /> | 95% | def |
+| <div align=center> 2DRMS </div>| <img src="https://latex.codecogs.com/gif.latex?2\sqrt{\sigma_x^2&plus;\sigma_y^2}" /> | 95% | def |
+
 
 ### 3.4 Magnetometer
 Unlike IMU, when we talk about the errors of a magnetometer, we also include environmental inteferences around the sensor, besides inherent errors of the magnetometer.
