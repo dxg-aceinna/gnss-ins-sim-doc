@@ -186,6 +186,19 @@ different gradients to appear on the plot.
 
 ## 4.2 Strapdown inertial system
 
+### 4.2.1 Rotation
+We adotp two attitude representations in **gnss-ins-sim**: Euler angles and quaternions. Since Euler angles are more straightforward, they are more suitable for input and output. In motion definitions files, Euler angles are used to specify device attitude.
+
+In **gnss-ins-sim**, Euler angles correspon to ZYX rotation sequence (yaw, pitch and roll), denoted by <img src="https://latex.codecogs.com/gif.latex?\psi,\theta,&space;&space;\phi"> respectively.
+<div align=center>
+<img src="https://latex.codecogs.com/gif.latex?C_n^b=\begin{bmatrix}cos(\theta)cos(\psi)&space;&cos(\theta)sin(\psi)&space;&-sin(\theta)&space;\\cos(\psi)sin(\phi)sin(\theta)-cos(\phi)sin(\psi)&space;&cos(\phi)cos(\psi)&plus;sin(\phi)sin(\theta)sin(\psi)&space;&cos(\theta)sin(\phi)&space;\\sin(\phi)sin(\psi)&plus;cos(\phi)cos(\psi)sin(\theta)&space;&cos(\phi)sin(\theta)sin(\psi)-cos(\psi)sin(\phi)&space;&cos(\phi)cos(\theta)&space;\end{bmatrix}" />
+<div>
+
+
+
+### 4.2.2 Translation
+
+
 ## 5 Simulation design and implementation
 ------
 
