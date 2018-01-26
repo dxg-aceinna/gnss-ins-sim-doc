@@ -137,7 +137,7 @@ Calibration errors (errors in the scale factors, alignments and linearities of t
 ### 3.3 GPS
 A GPS receiver can provide device position and velocity in the ECEF frame (WGS-84). It accuracy is usually specified as horizontal accuracy and vertical accuracy.
 
-There are various statistical methods of describing specifications for GPS receiver.
+There are various statistical methods of describing specifications for GPS receivers.
 
 ### 3.3.1 2D accuracy
 
@@ -166,6 +166,10 @@ The model of the magnetometer can be given by
 
 where, <img src="https://latex.codecogs.com/gif.latex?m"> is the true magnetic field, <img src="https://latex.codecogs.com/gif.latex?m_m"> is the sensor output, <img src="https://latex.codecogs.com/gif.latex?C_s_i"> is the soft iron matrix, <img src="https://latex.codecogs.com/gif.latex?b_m"> is the hard iron, <img src="https://latex.codecogs.com/gif.latex?n_m"> is the white noise. Indeed, the hard iron is composed of "true" hard iron and sensor bias, and the soft iron represents the combined effects of "true" soft iron, misalignment, scale factor error and installation error.
 
+If we take measurements of an ideal magnetometer while rotating the sensor arbitrarily and make a 3D plot of the measurement, all data points will be located on the surface of a sphere. The center of the spehre will be at [0, 0, 0] and the radius of the sphere is the amplitude of the local geomagnetic field. The hard iron will shift the sphere center and the linear soft iron will distor the sphere into an ellipsoid.
+<div align=center>
+<img width="500"  src="https://github.com/dxg-aceinna/gnss-ins-sim-doc/blob/master/images/mag.png"/>
+</div>
 
 ## 4 Algorithm
 ------
