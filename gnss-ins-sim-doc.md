@@ -1,14 +1,21 @@
 # **gnss-ins-sim**
 ------
 
-**gnss-ins-sim** is an open-source GNSS + inertial navigation, sensor fusion simulator.  Motion trajectory generator, sensor models, and navigation. 
+**gnss-ins-sim** is an open-source GNSS + inertial navigation, sensor fusion simulator. It consists of a trajectory generatro, sensor (gyroscope, accelerometer, magnetometer and GPS) data generator and a fusion algorithm simulator. 
 
 ## Contents
 ------
 * [1 Introduction](#1-introduction)
 * [2 Preliminary](#2-preliminary)
+    * [2.1 Cordinate systems](#2-1-coordinate-system)
+    * [2.2 Attitude representation](#2-2-attitude-representation)
 * [3 Sensor model](#3-sensor-model)
+    * [3.1 Gyroscope](#3-1-gyroscope)
+    * [3.2 Accelerometer](#3-2-accelerometer)
+    * [3.3 GPS](#3-3-gps)
+    * [3.4 Magnetometer](#3-4-magnetometer)
 * [4 Algorithm](#4-algorithm)
+    * [4.1 Allan analysis](#4-1-allan-analysis)
 * [5 Simulation design and implementation](#5-simulation-design-and-implementation)
 * [6 References](#6-references)
 
