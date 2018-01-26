@@ -168,7 +168,7 @@ where, <img src="https://latex.codecogs.com/gif.latex?m"> is the true magnetic f
 
 If we take measurements of an ideal magnetometer while rotating the sensor arbitrarily and make a 3D plot of the measurement, all data points will be located on the surface of a sphere. The center of the spehre will be at [0, 0, 0] and the radius of the sphere is the amplitude of the local geomagnetic field. The hard iron will shift the sphere center and the linear soft iron will distor the sphere into an ellipsoid.
 <div align=center>
-<img width="500"  src="https://github.com/dxg-aceinna/gnss-ins-sim-doc/blob/master/images/mag.png"/>
+<img width="500"  src="https://github.com/dxg-aceinna/gnss-ins-sim-doc/blob/master/images/mag_si_hi.png"/>
 </div>
 
 ## 4 Algorithm
