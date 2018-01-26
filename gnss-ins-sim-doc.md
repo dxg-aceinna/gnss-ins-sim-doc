@@ -79,7 +79,7 @@ When integrating the angular rate measurements from the gyro, the white noise in
 <img src="https://latex.codecogs.com/gif.latex?\sigma&space;_\theta(t)=\sigma\cdot\sqrt{dt\cdot&space;t}" title="\sigma _\theta(t)=\sigma\cdot\sqrt{dt\cdot t}" />
 </div>
 
-where <img src="https://latex.codecogs.com/gif.latex?dt" title="dt" /> is the sample interval, and <img src="https://latex.codecogs.com/gif.latex?t" title="t" /> is the integration duration. For <img src="https://latex.codecogs.com/gif.latex?n" title="n" /> samples, <img src="https://latex.codecogs.com/gif.latex?t=n\cdot&space;dt" title="t=n\cdot dt" />
+where <img src="https://latex.codecogs.com/gif.latex?dt" title="dt" /> is the sample interval, and <img src="https://latex.codecogs.com/gif.latex?t" title="t" /> is the integration duration. For <img src="https://latex.codecogs.com/gif.latex?n" title="n" /> samples, <img src="https://latex.codecogs.com/gif.latex?t=n\cdot&space;dt" title="t=n\cdot dt" /> .
 
 Since we usually integrate angular rate to get angles, it is common to specify the white noise using an angle random walk (ARW):
 <div align=center>
@@ -221,6 +221,19 @@ where, <img src="https://latex.codecogs.com/gif.latex?C_b^n" /> is the coordinat
 
 ## 5 Simulation design and implementation
 ------
+**gnss-ins-sim** is composed of the following modules:
+
+| name | description |
+|---|---|
+| allan | This is a built-in Allan variance module. |
+| psd | The psd module implement a function to generate time series from a given single-sided PSD. It is used to generate accelerations when users specify a vibration model by PSD. |
+| geoparams | The geoparams module contains two parts: Geomagnetic field and WGS-84 Earth model. |
+| attitude | The attitude model provide functions to manipulate different representations of attitude: Euler angles, DCMs and quaternions. |
+| pathgen | The pathgen module generate true postions, velocities, Euler angles, angular rates and accelerations accroding to motion definition files. It also generate sensor measurement according to given IMU, magnetometer and GPS error profiles. |
+| kml_gen | The kml_gen module can generate .kml files with given series of latitude, longitude and altitude. The generated .kml files can be imported into Google Earth to visualize the trajectories. |
+| sim | The sim module provide interfaces to the users. Most users would just use sim to do simulations. If you want more control, you may refer to the above modules. |
+ 
+
 Please refer to doc strings of the functions in each module.
 
 ## 6 References
