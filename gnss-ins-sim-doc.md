@@ -231,7 +231,7 @@ where, <img src="https://latex.codecogs.com/gif.latex?C_b^n" /> is the coordinat
 | attitude | The attitude model provides functions to manipulate different representations of attitude: Euler angles, DCMs and quaternions. |
 | pathgen | The pathgen module generates true postions, velocities, Euler angles, angular rates and accelerations accroding to motion definition files. It also generate sensor measurement according to given IMU, magnetometer and GPS error profiles. |
 | kml_gen | The kml_gen module generates .kml files with given series of latitude, longitude and altitude. The generated .kml files can be imported into Google Earth to visualize the trajectories. |
-| sim | The sim module provides interfaces to the users. Most users would just use sim to do simulations. If you want more control, you may refer to the above modules. |
+| sim | The sim module provides interfaces to the users. Most users would just use sim to do simulations. If you want more control, please refer to the above modules. |
  
 
 Please refer to doc strings of the functions in each module.
